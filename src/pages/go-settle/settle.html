@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button  (click)="dismiss()" ion-button icon-only color="royal">
+        <ion-icon name='arrow-back'></ion-icon>
+         取消
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content  class="background_grey full_width">
+  <div>
+    <ul class="sum_panel">
+      <li><label>应收金额：</label><em>&yen; {{goods_cart.info.total_money}}</em></li>
+      <li><label>实收金额：</label><em>&yen; {{goods_cart.info.pay_money}}</em></li>
+      <li><label>找零金额：</label><em>&yen; {{goods_cart.info.charge_money}}</em></li>
+    </ul>
+    <ul class="pay_panel">
+      <li>请选择支付方式</li>
+      <li>
+        <a  *ngFor="let c of check_list" (click)="pay(c)" class="{{c.class_name}}" href="javascript:void(0)">
+          <i class="icon"></i>
+          <span class="nm">{{c.check_name}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer_toolbar">
+    <h3>合计：<span class="red">&yen; {{goods_cart.info.total_money}}</span></h3>
+    <p>数量：{{goods_cart.info.total_num}}</p>
+    <button (click)="reset()"  class="reset_button">
+      重置
+    </button>
+    <button (click)="settleAct()"  class="settle_button">
+      结算
+    </button>
+  </ion-toolbar>
+</ion-footer>

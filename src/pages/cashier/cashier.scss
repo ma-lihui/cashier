@@ -1,0 +1,97 @@
+page-cashier {
+  .num input {
+    width: 42px;
+    height: 28px;
+    color: #333;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 -5px;
+    vertical-align: top;
+    outline: none;
+  }
+  .num {
+    button{
+      width: 28px;
+      height: 28px;
+      border: 1px solid #ccc;
+      color: #333;
+      line-height: 28px;
+      font-size: 1em;
+      background: #fff;
+    }
+    .left_button{
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    .right_button{
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+  .head-area{
+    .toolbar{
+      display: flex;
+    }
+    .toolbar-content{
+      display: flex;
+      justify-content: center;
+      margin: auto 10px;
+    }
+    .select{
+      background: rgba(0,0,0,0.08);
+      height: 3rem;
+      margin: 5px 0 0 0 !important;
+      display: flex;
+      align-items: center;
+      width: 80px;
+      border-radius: 1.5rem  0 0 1.5rem !important;
+    }
+    ion-searchbar{
+      padding-left: 0 !important;
+    }
+    .searchbar-search-icon{
+      display: none;
+    }
+    .searchbar-input{
+      padding-left: 10px !important;
+      border-radius: 0  1.5rem 1.5rem 0 !important;
+    }
+  }
+  .goods_list{
+    ion-item-sliding{
+      &:first-child{
+        border-top: 1px solid #ccc;
+      }
+    }
+  }
+  .vip-area{
+    h2 ,p{
+      margin: 10px;
+      span{
+        display: inline-block;
+        width: 50%;
+      }
+    }
+    ion-item{
+      //border-bottom: 1px solid #ccc !important;
+    }
+    margin-bottom: 2rem;
+
+  }
+
+}
+
+//选择搜索方式弹出
+.select-popover{
+  .popover-content{
+    width: 110px;
+    left: 35px;
+    .item-cover{
+      border-bottom: 0.55px solid #c8c7cc;
+    }
+    .item-inner{
+      border-bottom:none;
+    }
+  }
+
+}

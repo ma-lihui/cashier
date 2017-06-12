@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="light" class="head-area">
+    <ion-buttons start>
+      <button ion-button icon-only color="royal" (click)="openScan()">
+        <ion-icon name="qr-scanner"></ion-icon>
+      </button>
+    </ion-buttons>
+      <ion-select start item-left [(ngModel)]="searchType"  interface="popover">
+        <ion-option value="1">商品</ion-option>
+        <ion-option value="2">会员</ion-option>
+      </ion-select>
+    <ion-searchbar [(ngModel)]="keyword" (keyup)="onKeyup($event)" placeholder="{{searchType==1?'搜索商品':'搜索会员'}}"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="goods_cart.vip.customer_name" class="vip-area">
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-left>
+          <img  src="./assets/img/vip.png">
+        </ion-avatar>
+        <h2><span>{{goods_cart.vip.customer_name}}</span> <span>{{goods_cart.vip.tel}}</span></h2>
+        <p><span>可用积分: {{goods_cart.vip.vip_integral}}</span> <span>折扣: {{goods_cart.vip.rebate}}</span></p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button (click)="del_vip()" ion-button color="danger">
+          <ion-icon name="trash"></ion-icon>
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list class="goods_list">
+    <ion-item-sliding *ngFor="let g of goods_cart.goods; let i = index">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img  src="{{url}}pos/image/goods_code&goods_code={{g.spdm}}"  onerror="this.src='./assets/img/default.jpg'" >
+        </ion-thumbnail>
+        <h2>{{g.spmc}} <span class="red float_right">&yen;{{g.dj}}</span></h2>
+        <p>规格：{{g.gg1mc}} {{g.gg2mc}}</p>
+        <div class="num" item-right>
+          <button class="left_button" (click)="change_goods_num(i,-1)">—</button>
+          <input [(ngModel)]="g.sl" type="text" readonly>
+          <button class="right_button" (click)="change_goods_num(i,1)">+</button>
+        </div>
+      </ion-item>
+      <ion-item-options side="right">
+        <button (click)="del_goods(i)" ion-button color="danger">
+          <ion-icon name="trash"></ion-icon>
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer_toolbar">
+    <h3>合计：<span class="red">&yen; {{goods_cart.info.total_money}}</span></h3>
+    <p>数量：{{goods_cart.info.total_num}}</p>
+    <button (click)="goSettle()"  class="settle_button" [disabled]="goods_cart.info.total_num == 0">
+        确定
+    </button>
+  </ion-toolbar>
+</ion-footer>

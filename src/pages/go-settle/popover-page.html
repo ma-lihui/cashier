@@ -1,0 +1,80 @@
+<div class="popover">
+  <ion-list [hidden]="check.check_code!='001'">
+
+    <ion-item>
+      <ion-label fixed>应收金额</ion-label>
+      <ion-input  class="red" type="text" value="&yen; {{goods_cart.info.total_money}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>实收金额</ion-label>
+      <ion-input type="number" [(ngModel)]="pay_money" (input)="on_input(pay_money)"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>找零金额</ion-label>
+      <ion-input type="text" value="&yen; {{goods_cart.info.charge_money}}" readonly></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <ion-list [hidden]="check.check_code!='002'">
+
+    <ion-item>
+      <ion-label fixed>应收金额</ion-label>
+      <ion-input  class="red" type="text" value="&yen; {{goods_cart.info.total_money}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>实收金额</ion-label>
+      <ion-input type="number" [(ngModel)]="pay_money" (input)="on_input(pay_money)"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list [hidden]="check.check_code!='007'">
+
+    <ion-item>
+      <ion-label fixed>应收金额</ion-label>
+      <ion-input  class="red" type="text" value="&yen; {{goods_cart.info.total_money}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>现金券号</ion-label>
+      <ion-input type="number" [(ngModel)]="coupon_code" (input)="on_input(pay_money)"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>抵扣金额</ion-label>
+      <ion-input type="number" [(ngModel)]="pay_money"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list [hidden]="check.check_code!='011'">
+
+    <ion-item>
+      <ion-label fixed>应收金额</ion-label>
+      <ion-input  class="red" type="text" value="&yen; {{goods_cart.info.total_money}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item class="pay">
+      <img src="../../assets/img/zfbewm.jpg" alt="">
+      <p><img src="../../assets/img/zhifubao.png" alt="">请用支付宝扫码支付</p>
+    </ion-item>
+    
+  </ion-list>
+
+  <ion-list [hidden]="check.check_code!='008'">
+
+    <ion-item>
+      <ion-label fixed>应收金额</ion-label>
+      <ion-input  class="red" type="text" value="&yen; {{goods_cart.info.total_money}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item class="pay">
+      <img src="../../assets/img/wxewm.jpg" alt="">
+      <p><img src="../../assets/img/weixin.png" alt="">请用微信扫码支付</p>
+    </ion-item>
+
+  </ion-list>
+  <button (click)="confirm(pay_money)" ion-button block  color="danger">确定</button>
+</div>

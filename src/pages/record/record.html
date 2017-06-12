@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons start>
+      <button ion-button icon-only color="royal" (click)="openScan()">
+        <ion-icon name="qr-scanner"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar item-left class="search" [(ngModel)]="keyword" (keyup)="onKeyup($event)" placeholder="请输入小票单号"></ion-searchbar>
+    <button (click)="cancel()" item-right class="cancel_button" ion-button clear item-right >取消</button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header class="title" [hidden]="!record_data.record.record_code">
+      <h3>单据编号：{{record_data.record.record_code}}</h3>
+      <button ion-button item-right outline>整退</button>
+    </ion-list-header>
+    <ion-item-sliding *ngFor="let g of record_data.record_detail; let i = index" class="goods_list">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img  src="{{url}}pos/image/goods_code&goods_code={{g.goods_code}}"  onerror="this.src='./assets/img/default.jpg'" >
+        </ion-thumbnail>
+        <h2>{{g.goods_name}} <span class="red float_right">&yen;{{g.price}}</span></h2>
+        <p>规格：{{g.color_name}} {{g.size_name}}
+          <span class="float_right">x {{g.num}}</span>
+        </p>
+
+      </ion-item>
+      <!--<ion-item-options side="right">-->
+        <!--<button (click)="del_goods(i)" ion-button color="danger">-->
+          <!--<ion-icon name="trash"></ion-icon>-->
+          <!--删除-->
+        <!--</button>-->
+      <!--</ion-item-options>-->
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

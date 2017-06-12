@@ -1,0 +1,138 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.footer_toolbar{
+  height:60px;
+  h3{
+    margin: 4px 5px;
+  }
+  p{
+    margin: 0 5px;
+  }
+}
+.settle_button {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #e30107;
+  color: #fff;
+  width: 25%;
+  position: absolute;
+  line-height: 60px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.reset_button{
+  top: 0;
+  bottom: 0;
+  right: 25%;
+  background: #f6a623;
+  color: #fff;
+  width: 18%;
+  position: absolute;
+  line-height: 60px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.settle_button:disabled{
+  background: #8c8c8c;
+}
+.red{
+  color: #f00;
+}
+.float_right{
+  float: right;
+}
+.background_grey{
+  background:#f1f1f1;
+}
+.full_width{
+  width: 100%;
+}
+.sum_panel{ background:#FFF; padding: 5px 20px; }
+.sum_panel li{ line-height: 30px;list-style: none }
+.sum_panel li label{ color: #555; }
+.sum_panel li em{ float: right; color: #555;}
+.sum_panel li:first-child{ line-height: 40px; margin-bottom: 5px; border-bottom:1px dashed #8c8c8c; font-size: 1.1em;}
+.sum_panel li:first-child label{color: #333;}
+.sum_panel li:first-child em{ color: #f41324; }
+
+.pay_panel{ background:#FFF; padding: 0 20px 15px; margin-top: 10px;height:100%;}
+.pay_panel li{list-style: none}
+.pay_panel li{display: flex;justify-content: center;width: 100%}
+.pay_panel li:first-child{ line-height: 40px; border-bottom:1px solid #e1e1e1; }
+.pay_panel li a{display: block; flex-direction: column; color: #333; text-align: center;text-decoration:none; margin:20px 10px 0 0; width: 25%}
+.pay_panel li a .icon{ display: block; width: 43px; height: 43px; margin:0 auto; background:url(../assets/img/icons.png) no-repeat; background-size: 400px auto; margin-bottom: 4px;}
+.pay_panel li a .nm{ font-size: 0.8em; }
+.pay_panel li a.wx .icon{ background-position: 0px -100px; }
+.pay_panel li a.zfb .icon{ background-position: -50px -100px; }
+.pay_panel li a.yhk .icon{ background-position: -100px -100px; }
+.pay_panel li a.xj .icon{ background-position: -150px -100px; }
+.pay_panel li a.xjq .icon{ background:url(../assets/img/coupon.png) no-repeat; background-size: 40px 40px; margin-bottom: 4px;}
+.pay_panel li a.wx.disab .icon{ background-position: 0px -50px; }
+.pay_panel li a.zfb.disab .icon{ background-position: -50px -50px; }
+.pay_panel li a.yhk.disab .icon{ background-position: -100px -50px; }
+.pay_panel li a.xj.disab .icon{ background-position: -150px -50px; }
+
+//弹出层
+.popover{
+  top:0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  background: #fff;
+  padding-bottom: 20px;
+  button{
+    margin: 0 auto;
+    width: 50%;
+  }
+  ion-input{
+    text-align: right;
+  }
+}
+
+.footer_top{
+  border:0 solid #dddddd;
+  box-shadow:0 -3px 5px 0 #dddddd;
+  p{
+    padding: 5px;
+    margin: 5px;
+  }
+  .pro{
+    border:1px solid #da2f44;
+    border-radius:3px;
+    padding: 3px;
+    margin-right: 10px;
+    color:#d0011b;
+    text-align:center;
+  }
+}
+.pay{
+  text-align: center;
+  img{
+    width: 60%;
+  }
+  p{
+    color: #333333;
+    margin: 10px;
+    img{
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  }
+}

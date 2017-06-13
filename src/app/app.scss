@@ -72,16 +72,16 @@
 
 .pay_panel{ background:#FFF; padding: 0 20px 15px; margin-top: 10px;height:100%;}
 .pay_panel li{list-style: none}
-.pay_panel li{display: flex;justify-content: center;width: 100%}
-.pay_panel li:first-child{ line-height: 40px; border-bottom:1px solid #e1e1e1; }
-.pay_panel li a{display: block; flex-direction: column; color: #333; text-align: center;text-decoration:none; margin:20px 10px 0 0; width: 25%}
+.pay_panel li{display: flex;justify-content: start;width: 100%;flex-wrap: wrap;}
+.pay_panel li:first-child{ display:block;line-height: 40px; border-bottom:1px solid #e1e1e1; text-align: center;}
+.pay_panel li a{ color: #333; text-align: center;text-decoration:none; margin:20px 0; width: 25%}
 .pay_panel li a .icon{ display: block; width: 43px; height: 43px; margin:0 auto; background:url(../assets/img/icons.png) no-repeat; background-size: 400px auto; margin-bottom: 4px;}
 .pay_panel li a .nm{ font-size: 0.8em; }
 .pay_panel li a.wx .icon{ background-position: 0px -100px; }
 .pay_panel li a.zfb .icon{ background-position: -50px -100px; }
 .pay_panel li a.yhk .icon{ background-position: -100px -100px; }
 .pay_panel li a.xj .icon{ background-position: -150px -100px; }
-.pay_panel li a.xjq .icon{ background:url(../assets/img/coupon.png) no-repeat; background-size: 40px 40px; margin-bottom: 4px;}
+.pay_panel li a.xjq .icon{ background:url(../assets/img/coupon.png) no-repeat; background-size: 43px 43px; margin-bottom: 4px;}
 .pay_panel li a.wx.disab .icon{ background-position: 0px -50px; }
 .pay_panel li a.zfb.disab .icon{ background-position: -50px -50px; }
 .pay_panel li a.yhk.disab .icon{ background-position: -100px -50px; }

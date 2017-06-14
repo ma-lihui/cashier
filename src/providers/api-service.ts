@@ -55,7 +55,7 @@ export class ApiService {
         url: this.url,
         param: params
       };
-      if(0) {
+      if(1) {
         this.http.post(this.gateway, this.urlEncode(this.reqParam,null,true), options )
             .map(res => res.json())
             .subscribe(data => resolve(data), err => reject(err))

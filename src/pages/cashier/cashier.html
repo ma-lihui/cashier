@@ -5,10 +5,13 @@
         <ion-icon name="qr-scanner"></ion-icon>
       </button>
     </ion-buttons>
-      <ion-select start item-left [(ngModel)]="searchType"  interface="popover">
+    <div  start item-left class="select-search-type">
+      <ion-select [(ngModel)]="searchType"  interface="popover">
         <ion-option value="1">商品</ion-option>
         <ion-option value="2">会员</ion-option>
       </ion-select>
+    </div>
+
     <ion-searchbar [(ngModel)]="keyword" (keyup)="onKeyup($event)" placeholder="{{searchType==1?'搜索商品':'搜索会员'}}"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
@@ -41,9 +44,9 @@
         <h2>{{g.spmc}} <span class="red float_right">&yen;{{g.dj}}</span></h2>
         <p>规格：{{g.gg1mc}} {{g.gg2mc}}</p>
         <div class="num" item-right>
-          <button class="left_button" (click)="change_goods_num(i,-1)">—</button>
+          <button class="left_button" (click)="change_goods_num(i,-1)">－</button>
           <input [(ngModel)]="g.sl" type="text" readonly>
-          <button class="right_button" (click)="change_goods_num(i,1)">+</button>
+          <button class="right_button" (click)="change_goods_num(i,1)">＋</button>
         </div>
       </ion-item>
       <ion-item-options side="right">

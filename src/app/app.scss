@@ -14,6 +14,13 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+input[type=text] {
+  /* Remove First */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 .footer_toolbar{
   height:60px;
   h3{
@@ -29,23 +36,23 @@
   right: 0;
   background: #e30107;
   color: #fff;
-  width: 25%;
+  width: 5.5em;
   position: absolute;
   line-height: 60px;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 .reset_button{
   top: 0;
   bottom: 0;
-  right: 25%;
+  right: 5em;
   background: #f6a623;
   color: #fff;
-  width: 18%;
+  width: 4.2em;
   position: absolute;
   line-height: 60px;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 .settle_button:disabled{
   background: #8c8c8c;
@@ -89,10 +96,11 @@
 
 //弹出层
 .popover{
-  top:0;
+  top:-500px;
   right: 0;
   left: 0;
-  position: fixed;
+  width: 100%;
+  //position: fixed;
   background: #fff;
   padding-bottom: 20px;
   button{
@@ -102,8 +110,28 @@
   ion-input{
     text-align: right;
   }
+
+}
+.settlement{
+  .popover-wrapper{
+    width: 100%;
+    position: absolute;
+    top: -500px;
+    left: 0;
+    right: 0;
+    animation: 0.5s slideDown forwards;
+    .popover-content{
+      width: 100%;
+      position: static;
+    }
+  }
 }
 
+@keyframes slideDown {
+  to{
+    top: 0;
+  }
+}
 .footer_top{
   border:0 solid #dddddd;
   box-shadow:0 -3px 5px 0 #dddddd;

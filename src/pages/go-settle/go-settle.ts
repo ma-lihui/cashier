@@ -103,7 +103,7 @@ export class Settle {
     this.viewCtrl.dismiss();
   }
   presentPopover(check){
-    let popover = this.popoverCtrl.create(PopoverPage, {goods_cart:this.goods_cart,check:check});
+    let popover = this.popoverCtrl.create(PopoverPage, {goods_cart:this.goods_cart,check:check},{cssClass:'settlement'});
     popover.present();
   }
   pay(check){
